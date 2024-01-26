@@ -2,8 +2,8 @@
   "name": "HappyIslandDesigner",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "repository": "https://github.com/bodinsamuel/HappyIslandDesigner.git",
-  "author": "Samuel Bodin <samuel.bodin@algolia.com>",
+  "repository": "https://github.com/eugeneration/HappyIslandDesigner.git",
+  "author": "Eugene",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "7.9.0",

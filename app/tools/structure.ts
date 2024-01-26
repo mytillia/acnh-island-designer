@@ -7,6 +7,32 @@ import { loadSvg } from '../helpers/svgLoad';
 export const asyncStructureDefinition = new AsyncObjectDefinition();
 
 asyncStructureDefinition.value = {
+  home: {
+    size: new paper.Size(5, 4),
+    offset: new paper.Point(-2.5, -3.5),
+    extraObject() {
+      const baseGround = new paper.Path.Rectangle(
+        new paper.Rectangle(0, 0, 5, 4),
+        new paper.Size(0.5, 0.5),
+      );
+      baseGround.fillColor = colors.campground.color;
+      baseGround.position = new paper.Point(2.5, 2);
+      return baseGround;
+    },
+  },
+  resident: {
+    size: new paper.Size(4, 4),
+    offset: new paper.Point(-2, -3.5),
+    extraObject() {
+      const baseGround = new paper.Path.Rectangle(
+        new paper.Rectangle(0, 0, 4, 4),
+        new paper.Size(0.5, 0.5),
+      );
+      baseGround.fillColor = colors.campground.color;
+      baseGround.position = new paper.Point(2, 2);
+      return baseGround;
+    },
+  },
   tentRound: {},
   tentTriangle: {},
   tentTrapezoid: {},
