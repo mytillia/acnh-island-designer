@@ -113,7 +113,7 @@ export function load() {
     def.category = 'structures';
     def.type = structureType;
 
-    def.colorData = colors.npc;
+    //def.colorData = colors.npc;
     def.scaling = def.scaling || new paper.Point(0.032, 0.032);
     def.menuScaling = def.menuScaling || new paper.Point(0.3, 0.3);
     def.size = def.size || new paper.Size(4, 4);

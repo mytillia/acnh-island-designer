@@ -14,7 +14,7 @@ import { toolCategoryDefinition } from './tools';
 import { showMainMenu, mainMenu } from './ui/mainMenu';
 import { showHelpMenu, helpMenu } from './ui/help';
 import { toggleGrid } from './grid';
-import { redo, undo, state } from './state';
+import { state, redo, undo } from './state';
 import { toggleScreenshotVisible } from './ui/screenshotOverlay';
 import { modals } from './ui/modal';
 
@@ -37,8 +37,9 @@ export function onKeyUp(event) {
 }
 
 export function onKeyDown(event) {
-  const shift = paper.Key.isDown('shift');
-  const control = paper.Key.isDown('control') || paper.Key.isDown('meta');
+  //const shift = paper.Key.isDown('shift');
+  //const control = paper.Key.isDown('control') || paper.Key.isDown('meta');
+  //const alt = paper.Key.isDown('alt') || paper.Key.isDown('option');
 
   const prevActiveTool = toolState.activeTool;
   switch (event.key) {
@@ -73,16 +74,16 @@ export function onKeyDown(event) {
         changePaintTool(paintTools.freeform);
         break; */
     case 's':
-      if (control) {
+      //if (control) {
         saveMapToFile();
         event.preventDefault();
-      }
+      //}
       break;
     case 'o':
-      if (control) {
+      //if (control) {
         loadMapFromFile();
         event.preventDefault();
-      }
+      //}
       break;
     case '[':
     case '{':
@@ -142,17 +143,21 @@ export function onKeyDown(event) {
       navigator.clipboard.writeText(encodeMap());
       break;
     case 'z':
-      if (control && shift) {
-        redo();
-      } else if (control) {
+      //if (control) {
         undo();
-      }
+        event.preventDefault();
+      //}
+      //if (control && shift) {
+        //redo();
+      //} else if (control) {
+       //undo();
+      //}
       break;
     case 'y':
-      if (control) {
+      //if (control) {
         redo();
-        event.preventDefault();
-      }
+        event.preventDefault()
+      //}
       break;
 
     // temp
